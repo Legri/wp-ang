@@ -12,6 +12,7 @@ import { Page404Component } from './pages/page404/page404.component';
 import { HeaderComponent } from './pages/template/header/header.component';
 import { FooterComponent } from './pages/template/footer/footer.component';
 import { HomeComponent } from './pages/home/home.component';
+import { PostComponent } from './pages/project/post.component';
 
 import { GuardpagesGuard } from './guardpages.guard';
 import { GetcontentserviceService} from '../app/services/getcontentservice.service'
@@ -19,11 +20,14 @@ import { GetcontentserviceService} from '../app/services/getcontentservice.servi
 import { Ng4LoadingSpinnerModule } from 'ng4-loading-spinner';
 
 
+
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'about', component: AboutComponent },
   { path: 'contacts',      component: ContactsComponent ,canActivate: [GuardpagesGuard] },
   { path: 'login',      component: LoginComponent },
+  { path: 'post/:id',      component: PostComponent },
+
    { path: '',
     redirectTo: 'home',
     pathMatch: 'full'
@@ -41,7 +45,8 @@ const appRoutes: Routes = [
     Page404Component,
     HeaderComponent,
     FooterComponent,
-    HomeComponent
+    HomeComponent,
+    PostComponent
   ],
   imports: [
     RouterModule.forRoot(
