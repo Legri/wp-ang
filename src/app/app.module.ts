@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
@@ -18,7 +18,8 @@ import { GuardpagesGuard } from './guardpages.guard';
 import { GetcontentserviceService} from '../app/services/getcontentservice.service'
 
 import { Ng4LoadingSpinnerModule } from 'ng4-loading-spinner';
-
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
 
 const appRoutes: Routes = [
@@ -46,7 +47,7 @@ const appRoutes: Routes = [
     HeaderComponent,
     FooterComponent,
     HomeComponent,
-    PostComponent
+    PostComponent,
   ],
   imports: [
     RouterModule.forRoot(
@@ -58,9 +59,12 @@ const appRoutes: Routes = [
     HttpClientModule,
     FormsModule,
     RouterModule,
+    NgbModule,
+    MDBBootstrapModule.forRoot(),
     
     
   ],
+  schemas: [ NO_ERRORS_SCHEMA ],
   providers: [GuardpagesGuard,GetcontentserviceService],
   bootstrap: [AppComponent]
 })

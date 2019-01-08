@@ -1,5 +1,31 @@
-    <!-- Navigation -->
-    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
+<header class="h-100">
+    <mdb-navbar SideClass="navbar fixed-top navbar-expand-lg navbar-dark unique-color-dark scrolling-navbar intro-fixed-nav" [containerInside]="false">
+        <mdb-navbar-brand>
+            <a class="logo navbar-brand" routerLink="/home"><strong>Home</strong></a>
+        </mdb-navbar-brand>
+        <links class="justify-content-end">
+          
+              <ul class="nav navbar-nav smooth-scroll " >
+                <li class="nav-item  waves-light" mdbWavesEffect>
+                    <a class="nav-link" routerLink="/home">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item waves-light" mdbWavesEffect>
+                    <a class="nav-link" routerLink="/about">About</a>
+                </li>
+                <li class="nav-item waves-light" mdbWavesEffect>
+                    <a class="nav-link" routerLink="/contacts">Contact</a>
+                </li>
+                <li class="nav-item">
+              
+                    <a class="nav-link" routerLink="/login"> <span *ngIf="str=='logOut'">LOGIN</span><span *ngIf="str=='login'">LOGOUT</span></a>
+                </li>
+            </ul>
+
+        </links>
+    </mdb-navbar>
+
+<!--    <!-- Navigation -->
+ <!--     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container">
         <a class="navbar-brand" routerLink="/home">Start Bootstrap</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -13,7 +39,7 @@
            <!-- <li class="nav-item">
               <a class="nav-link" routerLink="/login">login</a>
             </li>-->
-            <li class="nav-item">
+ <!--             <li class="nav-item">
               <a class="nav-link" routerLink="/contacts">Contact</a>
             </li>
             <li class="nav-item dropdown">
@@ -57,4 +83,4 @@
           </ul>
         </div>
       </div>
-    </nav>
+    </nav> -->

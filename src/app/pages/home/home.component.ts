@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GetcontentserviceService} from '../../../app/services/getcontentservice.service';
-import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner';
+
 
 @Component({
   selector: 'app-home',
@@ -14,7 +14,8 @@ export class HomeComponent implements OnInit {
   data:any;
   postdata:any
   imgprog:string;
-  constructor(private serv : GetcontentserviceService, private spinnerService: Ng4LoadingSpinnerService) { }
+
+  constructor(private serv : GetcontentserviceService) { }
 
   ngOnInit() {
 

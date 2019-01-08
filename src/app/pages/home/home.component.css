@@ -1,0 +1,12 @@
+.container-fluid2{
+    padding:0!important;
+    margin: 0;
+}
+
+@media only screen and (max-width: 960px) {
+    .active {
+         margin: -200px 0!important;
+
+    }
+
+}

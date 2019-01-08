@@ -1,18 +1,30 @@
+<!-- Jumbotron -->
+<div class="jumbotron text-center">
 
-<div class="container-fluid no-padding">
-  <div class="row">
-    <div class="col-md-12">
-      <img src="{{postdataimg}}" alt="placeholder 960" class="img-responsive" />
+    <!-- Title -->
+    <h4 class="card-title h4 pb-2"><strong [innerHTML]="postdatatitle"></strong></h4>
+  
+    <!-- Card image -->
+    <div class="view overlay my-4 waves-light" mdbWavesEffect>
+
+      <img src="{{postdataimg}}" class="img-fluid  mx-auto d-block" alt="">
+
+
+      <a>
+        <div class="mask rgba-white-slight"></div>
+      </a>
     </div>
+  
+    <h5 class="indigo-text h5 mb-4" [innerHTML]="postdatatitle"></h5>
+  
+    <p class="card-text" [innerHTML]="postdatacontent"></p>
+  
+ 
+  
   </div>
-</div>
-    <!-- Content section -->
-    <section class="container">
-      <div class="container">
-        <h1 [innerHTML]="postdatatitle" class="text-center"></h1>
-        
-        <p [innerHTML]="postdatacontent"></p>
-      </div>
-    </section>
+  <!-- Jumbotron -->
+
+
+
 
 

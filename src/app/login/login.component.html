@@ -1,4 +1,78 @@
 
+<!-- Jumbotron -->
+<div class="jumbotron text-center blue-grey lighten-5">
+
+    <!-- Title -->
+    <h2 class="card-title h2">Material Design for Bootstrap</h2>
+  
+    <!-- Subtitle -->
+    <p class="indigo-text my-4 font-weight-bold">Powerful and free Material Design UI KIT</p>
+  
+    <!-- Grid row -->
+    <div class="row d-flex justify-content-center">
+  
+      <!-- Grid column -->
+      <div class="col-xl-7 pb-2">
+  
+          <div  *ngIf="message2=='not login'">
+              <div class="alert alert-danger" role="alert">
+                <strong>Oh snap!</strong> You have entered an invalid username or password.
+              </div>
+            </div>
+        
+            <div  *ngIf="message2=='is login'">
+                <div class="alert  alert-success" role="alert">
+                  <strong>You are login successfully!</strong> 
+                </div>
+              </div>
+        
+        <div *ngIf="str=='logOut'">
+        
+          <div class="imgcontainer">
+            <img src="../../assets/images.jpg" alt="Avatar" class="avatar">
+          </div>
+        
+
+
+            <div class="md-form">
+                <input mdbInputDirective placeholder="Username" type="text" class="form-control" name="psw" [(ngModel)]="username"  required>
+                <label for="form58">Username</label>
+              </div>
+        
+
+            <div class="md-form">
+                <input mdbInputDirective placeholder="Password" type="password"  class="form-control" name="psw" [(ngModel)]="password"  required>
+                <label for="form58">Password</label>
+              </div>
+                
+
+            <button mdbBtn gradient="blue" rounded="true" mdbWavesEffect (click)="onlogin(username,password)">Login <mdb-icon icon="diamond" class="ml-1"></mdb-icon></button>
+            
+          </div>
+        
+        <div  *ngIf="str=='login'">
+            <div class="imgcontainer">
+                <img src="../../assets/images.jpg" alt="Avatar" class="avatar">
+              </div>
+
+          <button mdbBtn gradient="blue" rounded="true" mdbWavesEffect (click)="onlogout()">LogOut <mdb-icon icon="diamond" class="ml-1"></mdb-icon></button>
+        </div>
+  
+      </div>
+      <!-- Grid column -->
+  
+    </div>
+    <!-- Grid row -->
+  
+    <hr class="my-4 pb-2">
+  
+  
+  </div>
+  <!-- Jumbotron -->
+
+
+
+<!--
 <div class="container">
     <div  *ngIf="message2=='not login'">
       <div class="alert alert-danger" role="alert">
@@ -33,3 +107,4 @@
   <button type="button" class="btn btn-danger" (click)="onlogout()">LogOut</button>
 </div>
 </div>
+-->
