@@ -32,6 +32,7 @@ postdatacontent:string;
       err => {
         console.log('err');
         this.router.navigate(['/page404'])
+        //test 2
       },
       () => {
         // Do stuff after completion
