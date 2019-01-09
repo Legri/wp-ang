@@ -12,8 +12,10 @@ export class HomeComponent implements OnInit {
   container : any;
   slider_img1:any;
   data:any;
-  postdata:any
+  postdata:any;
+  bookdata:any;
   imgprog:string;
+
 
   constructor(private serv : GetcontentserviceService) { }
 
@@ -27,13 +29,16 @@ export class HomeComponent implements OnInit {
   this.slider_img1=this.data['acf']['slider_img1'];
   });
    
- 
   this.serv.getcontentbypost().subscribe((postdata) => {postdata;
   this.postdata=postdata;
-  //this.imgprog=postdata[2]['acf']['imgprog'];
-
-  console.log(postdata);
+   //console.log(postdata);
     });
+
+  this.serv.getcontentbynews_book().subscribe((bookdata) => {bookdata;
+  this.bookdata=bookdata;
+  console.log(bookdata);
+  });
+
   }
 
 }

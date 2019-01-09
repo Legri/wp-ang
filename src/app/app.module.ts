@@ -20,6 +20,8 @@ import { GetcontentserviceService} from '../app/services/getcontentservice.servi
 import { Ng4LoadingSpinnerModule } from 'ng4-loading-spinner';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { BlogComponent } from './pages/blog/blog.component';
+import { MyblogComponent } from './pages/myblog/myblog.component';
 
 
 const appRoutes: Routes = [
@@ -28,7 +30,8 @@ const appRoutes: Routes = [
   { path: 'contacts',      component: ContactsComponent ,canActivate: [GuardpagesGuard] },
   { path: 'login',      component: LoginComponent },
   { path: 'post/:id',      component: PostComponent },
-
+  { path: 'blog/:id',      component: BlogComponent },
+  { path: '404',     component: Page404Component },
    { path: '',
     redirectTo: 'home',
     pathMatch: 'full'
@@ -48,6 +51,8 @@ const appRoutes: Routes = [
     FooterComponent,
     HomeComponent,
     PostComponent,
+    BlogComponent,
+    MyblogComponent,
   ],
   imports: [
     RouterModule.forRoot(
