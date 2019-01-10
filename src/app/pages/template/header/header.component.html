@@ -1,7 +1,7 @@
 <header class="h-100">
     <mdb-navbar SideClass="navbar fixed-top navbar-expand-lg navbar-dark unique-color-dark scrolling-navbar intro-fixed-nav" [containerInside]="false">
         <mdb-navbar-brand>
-            <a class="logo navbar-brand" routerLink="/home"><strong>Home</strong></a>
+            <a class="logo navbar-brand" routerLink="/home"><strong>LOGO</strong></a>
         </mdb-navbar-brand>
         <links class="justify-content-end">
           
@@ -13,10 +13,12 @@
                     <a class="nav-link" routerLink="/about">About</a>
                 </li>
                 <li class="nav-item waves-light" mdbWavesEffect>
+                  <a class="nav-link" routerLink="/myblog">Blog</a>
+                </li>
+                <li class="nav-item waves-light" mdbWavesEffect>
                     <a class="nav-link" routerLink="/contacts">Contact</a>
                 </li>
                 <li class="nav-item">
-              
                     <a class="nav-link" routerLink="/login"> <span *ngIf="str=='logOut'">LOGIN</span><span *ngIf="str=='login'">LOGOUT</span></a>
                 </li>
             </ul>

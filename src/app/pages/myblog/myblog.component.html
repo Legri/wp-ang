@@ -1,3 +1,38 @@
-<p>
-  myblog works!
-</p>
+<div class="container">
+  
+<div class="form-inline mr-auto">
+  <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" [(ngModel)]="searchtext" (ngModelChange)="onClickSearch(searchtext)">
+  <button class="btn btn-outline-success btn-rounded btn-sm my-0" (click)="onClickSearch(searchtext)">Search</button>
+</div>
+<div  *ngIf="message2=='is login'">
+    <div class="alert alert-danger" role="alert">
+        <strong>Oh snap!</strong> nothing was found!!!
+      </div>
+  </div>
+
+<section id="news" class="section news-section">
+
+  <h1 class="section-heading text-center mb-5 mt-5 pt-4 font-weight-bold wow fadeIn" data-wow-delay="0.2s" style="visibility: visible; animation-name: fadeIn; animation-delay: 0.2s;">My posts</h1>
+
+  <hr class="between-sections">
+
+  <!--Section: Design-->
+  <div class="text-center mt-3 text-lg-left"  *ngFor="let book of bookdata">
+      <div class="row pb-2 pt-3 wow fadeIn" >
+          <div class="col-lg-3">
+               <div class="view overlay mb-3 z-depth-1">
+                  <img src="https://picsum.photos/900/500?random&t=${Math.random()}" class="img-fluid z-depth-1" alt="Post Image">
+                  <div class="mask rgba-white-slight"></div>
+              </div>
+          </div>
+          <div class="col-lg-9 add-margins-2">
+              <h6 class="text-uppercase mb-3"><a routerLink="/blog/{{book['id']}}" class="text-muted grey-text font-weight-bold">| {{book['date']}}</a></h6>
+              <h4 class="mb-3"><a routerLink="/blog/{{book['id']}}" class="teal-text font-weight-bold pb-3" [innerHTML]="book['title']['rendered']"> </a></h4>
+              <p class="grey-text-3 font-thin"  [innerHTML]="book['excerpt']['rendered']"></p>
+          </div>
+      </div>
+      <hr class="between-sections mt-4 mb-4">
+  </div>
+
+</section>
+</div>

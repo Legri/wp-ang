@@ -31,4 +31,13 @@ export class GetcontentserviceService {
      return this.http.get('https://restapi.kusmirchuk.top/wp-json/wp/v2/news_book/'+id);
   }
 
+  getcontentbynews_book_all(){
+     return this.http.get('https://restapi.kusmirchuk.top/wp-json/wp/v2/news_book/');
+  }
+
+  getcontentbynews_book_search(text){
+     return this.http.get('https://restapi.kusmirchuk.top/wp-json/wp/v2/news_book?search='+text);
+  }
+
+
 }

@@ -31,6 +31,7 @@ const appRoutes: Routes = [
   { path: 'login',      component: LoginComponent },
   { path: 'post/:id',      component: PostComponent },
   { path: 'blog/:id',      component: BlogComponent },
+  { path: 'myblog',      component: MyblogComponent },
   { path: '404',     component: Page404Component },
    { path: '',
     redirectTo: 'home',
