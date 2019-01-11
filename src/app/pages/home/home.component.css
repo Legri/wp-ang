@@ -24,3 +24,11 @@ mdb-card {
     -webkit-filter: grayscale(1);
     -webkit-transition: all .8s ease-in-out;
 }
+
+.view.view-cascade.overlay.waves-light {
+    height: 200px;
+}
+
+.col-md-4 {
+    padding-bottom: 20px;
+}

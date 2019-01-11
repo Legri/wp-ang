@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Response, Http } from "@angular/http"
 import { Observable } from "rxjs";
 import { map } from 'rxjs/operators';
+import {Headers} from '@angular/http';
 
 
 @Injectable({
@@ -22,6 +23,9 @@ export class GetcontentserviceService {
   getcontentbypost(){
      return this.http.get('https://restapi.kusmirchuk.top/wp-json/wp/v2/posts?per_page=3');
   }
+  getcontentbypost_all(){
+     return this.http.get('https://restapi.kusmirchuk.top/wp-json/wp/v2/posts/');
+  }
 
   getcontentbynews_book(){
      return this.http.get('https://restapi.kusmirchuk.top/wp-json/wp/v2/news_book?per_page=3');
@@ -30,6 +34,7 @@ export class GetcontentserviceService {
   getcontentoneblog(id){
      return this.http.get('https://restapi.kusmirchuk.top/wp-json/wp/v2/news_book/'+id);
   }
+
 
   getcontentbynews_book_all(){
      return this.http.get('https://restapi.kusmirchuk.top/wp-json/wp/v2/news_book/');

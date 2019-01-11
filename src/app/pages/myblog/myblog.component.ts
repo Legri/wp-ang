@@ -11,6 +11,7 @@ export class MyblogComponent implements OnInit {
   bookdata:any;
   searchtext:string;
   message2:string;
+  p: number = 1;
 
   constructor(private serv : GetcontentserviceService, private mess:MessagesService) { }
 

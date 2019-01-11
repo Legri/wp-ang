@@ -5,3 +5,7 @@
 .row{
     margin:0;
 }
+
+.view img, .view video {
+    max-height: 400px;
+}

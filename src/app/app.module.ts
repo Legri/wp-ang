@@ -20,8 +20,13 @@ import { GetcontentserviceService} from '../app/services/getcontentservice.servi
 import { Ng4LoadingSpinnerModule } from 'ng4-loading-spinner';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import {NgxPaginationModule} from 'ngx-pagination';
+
 import { BlogComponent } from './pages/blog/blog.component';
 import { MyblogComponent } from './pages/myblog/myblog.component';
+import { PortfolioComponent } from './pages/portfolio/portfolio.component';
+import { NgxSpinnerModule } from 'ngx-spinner';
+
 
 
 const appRoutes: Routes = [
@@ -32,6 +37,7 @@ const appRoutes: Routes = [
   { path: 'post/:id',      component: PostComponent },
   { path: 'blog/:id',      component: BlogComponent },
   { path: 'myblog',      component: MyblogComponent },
+  { path: 'portfolio',      component: PortfolioComponent },
   { path: '404',     component: Page404Component },
    { path: '',
     redirectTo: 'home',
@@ -54,6 +60,7 @@ const appRoutes: Routes = [
     PostComponent,
     BlogComponent,
     MyblogComponent,
+    PortfolioComponent,
   ],
   imports: [
     RouterModule.forRoot(
@@ -67,6 +74,8 @@ const appRoutes: Routes = [
     RouterModule,
     NgbModule,
     MDBBootstrapModule.forRoot(),
+    NgxPaginationModule,
+    NgxSpinnerModule
     
     
   ],

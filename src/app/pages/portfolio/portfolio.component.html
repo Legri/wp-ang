@@ -1,0 +1,64 @@
+<section class="">
+
+  <!-- Grid row -->
+  <div class="row">
+
+    <!-- Grid column -->
+    <div class="col-md-12">
+
+      <!-- Card -->
+      <div class="card card-cascade wider reverse">
+
+        <!-- Card image -->
+        <div class="view view-cascade overlay">
+          <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Slides/img%20(142).jpg" alt="Sample image">
+          <a href="#!">
+            <div class="mask rgba-white-slight"></div>
+          </a>
+        </div>
+      </div>
+  
+    </div>
+    <!-- Grid column -->
+
+  </div>
+  <!-- Grid row -->
+
+  <hr class="mb-5 mt-4">
+
+</section>
+<!-- Section: Blog v.4 -->
+
+<div class="container">
+<!-- /.row -->
+<div class="row">
+
+  <div class="col-md-4"  *ngFor="let sto of postdata">
+
+    <mdb-card cascade="true" narrower="true">
+
+        <!--Card image-->
+        <div class="view view-cascade overlay waves-light" mdbWavesEffect>
+          <mdb-card-img src="{{sto['acf']['imgprog']}}" class="imgblw"></mdb-card-img>
+          <a     routerLink="/post/{{sto['id']}}">
+            <div class="mask rgba-white-slight"></div>
+          </a>
+        </div>
+        <!--/Card image-->
+  
+        <mdb-card-body cascade="true" class="text-center">
+          <!--Card content-->
+          <h5 class="pink-text">
+            <i class="fa fa-wordpress"></i>Wordpress</h5>
+          <!--Title-->
+          <h4 class="card-title"> {{sto['title']['rendered']}}</h4>
+          <!--Text-->
+  
+          <mdb-card-text [innerHTML]="sto['excerpt']['rendered']">
+           
+          </mdb-card-text>
+        </mdb-card-body>
+      </mdb-card>
+</div>
+</div>
+</div>

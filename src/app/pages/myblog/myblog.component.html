@@ -1,9 +1,13 @@
 <div class="container">
   
-<div class="form-inline mr-auto">
-  <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" [(ngModel)]="searchtext" (ngModelChange)="onClickSearch(searchtext)">
-  <button class="btn btn-outline-success btn-rounded btn-sm my-0" (click)="onClickSearch(searchtext)">Search</button>
-</div>
+
+
+<!-- Search form -->
+<div class="md-form active-cyan active-cyan-2 mb-3">
+    <input class="form-control" type="text" placeholder="Search" aria-label="Search" [(ngModel)]="searchtext" (ngModelChange)="onClickSearch(searchtext)">
+  </div>
+
+
 <div  *ngIf="message2=='is login'">
     <div class="alert alert-danger" role="alert">
         <strong>Oh snap!</strong> nothing was found!!!
@@ -12,12 +16,12 @@
 
 <section id="news" class="section news-section">
 
-  <h1 class="section-heading text-center mb-5 mt-5 pt-4 font-weight-bold wow fadeIn" data-wow-delay="0.2s" style="visibility: visible; animation-name: fadeIn; animation-delay: 0.2s;">My posts</h1>
+  <h1 class="section-heading text-center mb-5 mt-5 pt-4 font-weight-bold wow fadeIn" >My posts</h1>
 
   <hr class="between-sections">
 
   <!--Section: Design-->
-  <div class="text-center mt-3 text-lg-left"  *ngFor="let book of bookdata">
+  <div class="text-center mt-3 text-lg-left"  *ngFor="let book of bookdata | paginate: { itemsPerPage: 3, currentPage: p }">
       <div class="row pb-2 pt-3 wow fadeIn" >
           <div class="col-lg-3">
                <div class="view overlay mb-3 z-depth-1">
@@ -33,6 +37,7 @@
       </div>
       <hr class="between-sections mt-4 mb-4">
   </div>
-
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
 </section>
+
 </div>
