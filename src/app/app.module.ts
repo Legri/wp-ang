@@ -32,10 +32,10 @@ import { NgxSpinnerModule } from 'ngx-spinner';
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'about', component: AboutComponent },
-  { path: 'contacts',      component: ContactsComponent ,canActivate: [GuardpagesGuard] },
+  { path: 'contacts',      component: ContactsComponent },
   { path: 'login',      component: LoginComponent },
   { path: 'post/:id',      component: PostComponent },
-  { path: 'blog/:id',      component: BlogComponent },
+  { path: 'blog/:id',      component: BlogComponent ,canActivate: [GuardpagesGuard] },
   { path: 'myblog',      component: MyblogComponent },
   { path: 'portfolio',      component: PortfolioComponent },
   { path: '404',     component: Page404Component },

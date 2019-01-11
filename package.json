@@ -1,6 +1,6 @@
 {
-  "name": "my-appwp",
-  "version": "0.0.0",
+  "name": "1",
+  "version": "0.0.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -61,10 +61,13 @@
     "type": "git",
     "url": "git+https://github.com/Legri/nagular-wp.git"
   },
-  "author": "",
+  "author": "111",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Legri/nagular-wp/issues"
   },
-  "homepage": "https://github.com/Legri/nagular-wp#readme"
+  "homepage": "https://github.com/Legri/nagular-wp#readme",
+  "keywords": [
+    "111"
+  ]
 }
