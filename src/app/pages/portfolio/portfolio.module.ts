@@ -14,7 +14,7 @@ const appRoutes: Routes = [
   imports: [
     CommonModule,
     RouterModule.forChild(appRoutes),
-    MDBBootstrapModule
+    MDBBootstrapModule,
   ],
   declarations: [PortfolioComponent]
 })
