@@ -23,8 +23,6 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import {NgxPaginationModule} from 'ngx-pagination';
 
 import { BlogComponent } from './pages/blog/blog.component';
-import { MyblogComponent } from './pages/myblog/myblog.component';
-import { PortfolioComponent } from './pages/portfolio/portfolio.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
 
 
@@ -36,8 +34,8 @@ const appRoutes: Routes = [
   { path: 'login',      component: LoginComponent },
   { path: 'post/:id',      component: PostComponent },
   { path: 'blog/:id',      component: BlogComponent ,canActivate: [GuardpagesGuard] },
-  { path: 'myblog',      component: MyblogComponent },
-  { path: 'portfolio',      component: PortfolioComponent },
+  { path: 'myblog',      loadChildren: './pages/myblog/myblog.module#MyblogModule' },
+  { path: 'portfolio',      loadChildren: './pages/portfolio/portfolio.module#PortfolioModule'},
   { path: '404',     component: Page404Component },
    { path: '',
     redirectTo: 'home',
@@ -59,8 +57,7 @@ const appRoutes: Routes = [
     HomeComponent,
     PostComponent,
     BlogComponent,
-    MyblogComponent,
-    PortfolioComponent,
+
   ],
   imports: [
     RouterModule.forRoot(

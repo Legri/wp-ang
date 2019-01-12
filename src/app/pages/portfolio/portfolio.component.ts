@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { GetcontentserviceService} from '../../../app/services/getcontentservice.service';
 
+
 @Component({
   selector: 'app-portfolio',
   templateUrl: './portfolio.component.html',
