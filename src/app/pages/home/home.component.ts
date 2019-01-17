@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit  } from '@angular/core';
 import { GetcontentserviceService} from '../../../app/services/getcontentservice.service';
 
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
   title: string;
@@ -15,6 +15,7 @@ export class HomeComponent implements OnInit {
   postdata:any;
   bookdata:any;
   imgprog:string;
+  loading:boolean =true;
 
 
   constructor(private serv : GetcontentserviceService) { }
@@ -36,8 +37,11 @@ export class HomeComponent implements OnInit {
 
   this.serv.getcontentbynews_book().subscribe((bookdata) => {bookdata;
   this.bookdata=bookdata;
-  console.log(bookdata);
+  //console.log(bookdata);
+  this.loading=false;
+
   });
+
 
   }
 
