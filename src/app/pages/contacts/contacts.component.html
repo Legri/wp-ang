@@ -6,12 +6,20 @@
                   <div class="form-group">
                       <h1 class="text-center">Contact Us.</h1>
                   </div>
-                  <div class="form-group"><input class="form-control form-control-lg" type="text" required placeholder="Name" style="width: 50%;margin-left: 25%;" name="username" [(ngModel)]="username"/></div>
-                  <div class="form-group"><input class="form-control form-control-lg" type="email" placeholder="Email" style="width: 50%;margin-left: 25%;" name="usermail" [(ngModel)]="usermail"/></div>
-                  <div class="form-group"><textarea class="form-control form-control-lg" placeholder="Message" style="width: 50%;margin-left: 25%;min-height: 200px;" name="usertext" [(ngModel)]="usertext"></textarea></div>
+                  <div class="form-group"><input class="form-control form-control-lg" type="text"  placeholder="Name" style="width: 50%;margin-left: 25%;" name="username" [(ngModel)]="username" required/></div>
+                  <div class="form-group"><input class="form-control form-control-lg" type="email" placeholder="Email" style="width: 50%;margin-left: 25%;" name="usermail" [(ngModel)]="usermail" required/></div>
+                  <div class="form-group"><textarea class="form-control form-control-lg" placeholder="Message" style="width: 50%;margin-left: 25%;min-height: 200px;" name="usertext" [(ngModel)]="usertext" required></textarea></div>
                   <div class="form-group"><button class="btn btn-dark btn-lg"  style="width: 50%;margin-left: 25%;" (click)="onClickSeandh(username,usermail,usertext)">Contact us</button></div>
+                </div>
+                <div *ngIf="sendok">
+                    mail sending
+                </div>
+                <div *ngIf="sendok==false">
+                    mail not sending
                 </div>
           </div>
       </div>
   </div>
 </div>
+
+

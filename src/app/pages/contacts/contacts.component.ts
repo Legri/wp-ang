@@ -13,6 +13,10 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 export class ContactsComponent implements OnInit {
   data:any;
+  username:any;
+  usermail:any;
+  usertext:any;
+  sendok:boolean;
   httpOpt = {
     headers: new HttpHeaders({
       'Content-Type':  'application/json',
@@ -27,11 +31,24 @@ export class ContactsComponent implements OnInit {
   }
 
   onClickSeandh(username,usermail,usertext){
-    this.http.post('https://kusmirchuk.top/assets/mail.php',{username: username, usermail:usermail, usertext:usertext },this.httpOpt) .subscribe(
-      (data) => {this.data=data;},
-      error => console.log(error)
-  );;
-    console.log(this.data);
+    if(username==null){username=''}
+    if(usermail==null){usermail=''}
+    if(usertext==null){usertext=''}
+    if((username.length>0)&&(usermail.length>0)&&(usertext.length>0)){
+      this.http.post('https://kusmirchuk.top/assets/mail.php',{username: username, usermail:usermail, usertext:usertext },this.httpOpt) .subscribe(
+        (data) => {this.data=data;
+        console.log(this.data);
+        if (this.data==null){
+          this.sendok=true;
+        }else{
+          this.sendok=false;
+        }
+        },
+        error => console.log(error)
+        );
+    } else{
+      this.sendok=false;
+    }
 
   }
 
