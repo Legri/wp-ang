@@ -21,14 +21,14 @@ export class GetcontentserviceService {
   }
 
   getcontentbypost(){
-     return this.http.get('https://restapi.kusmirchuk.top/wp-json/wp/v2/posts?per_page=3');
+     return this.http.get('https://restapi.kusmirchuk.top/wp-json/wp/v2/posts?per_page=6');
   }
   getcontentbypost_all(){
      return this.http.get('https://restapi.kusmirchuk.top/wp-json/wp/v2/posts/');
   }
 
   getcontentbynews_book(){
-     return this.http.get('https://restapi.kusmirchuk.top/wp-json/wp/v2/news_book?per_page=3');
+     return this.http.get('https://restapi.kusmirchuk.top/wp-json/wp/v2/news_book?per_page=6');
   }
 
   getcontentoneblog(id){

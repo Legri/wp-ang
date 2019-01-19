@@ -1,90 +1,62 @@
-<div class="container-fluid2">
-<mdb-carousel [animation]="'slide'">
-    <mdb-carousel-item>
-      <img class="d-block w-100" src="/src/assets/img/blogger-336371_960_720.jpg" alt="First slide">
-    </mdb-carousel-item>
-  <!--  <mdb-carousel-item>
-      <img class="d-block w-100" src="https://picsum.photos/900/500?random&t=${Math.random(10)}" alt="Second slide">
-    </mdb-carousel-item>
-    <mdb-carousel-item>
-      <img class="d-block w-100" src="https://picsum.photos/900/500?random&t=${Math.random(15)}" alt="Third slide">
-    </mdb-carousel-item>-->
-  </mdb-carousel>
-</div>
-
-<div class="container">
-<!-- Page Content -->
-<hr>
-
-   <!-- Features Section -->
-   <div class="row my-4">
-      <div class="col-lg-6">
-
-        <p [innerHTML]="container"></p>
-      </div>
-      <div class="col-lg-6">
-        <img class="img-fluid rounded" src="/src/assets/img/home-office-336377_960_720.jpg" alt="">
-      </div>
+<div class="paralaxmy" data-bs-parallax-bg="true" style="height: 500px;background-image: url(/assets/img/wp.jpg);background-position: center;background-size: cover;"></div>
+<!--<div class="highlight-clean" *ngIf="loading">
+    <div class="container">
+        <div class="intro">
+            <h2 class="text-center text-light">L &nbsp; O &nbsp; A &nbsp; D &nbsp; I &nbsp; N &nbsp; G &nbsp; . &nbsp;. &nbsp;.</h2>
+        </div>
+        <div class="buttons"></div>
     </div>
-    <!-- /.row -->
-     <hr>
-  <h2>latest works</h2>
-  <!-- /.row -->
-<div class="row">
-
-    <div class="col-md-4"  *ngFor="let sto of postdata">
-
-      <mdb-card cascade="true" narrower="true">
-
-          <!--Card image-->
-          <div class="view view-cascade overlay waves-light" mdbWavesEffect>
-            <mdb-card-img src="{{sto['acf']['imgprog']}}" class="imgblw"></mdb-card-img>
-            <a     routerLink="/post/{{sto['id']}}">
-              <div class="mask rgba-white-slight"></div>
-            </a>
-          </div>
-          <!--/Card image-->
-    
-          <mdb-card-body cascade="true" class="text-center">
-            <!--Card content-->
-            <h5 class="pink-text">
-              <i class="fa fa-wordpress"></i>Wordpress</h5>
-            <!--Title-->
-            <h4 class="card-title"> {{sto['title']['rendered']}}</h4>
-            <!--Text-->
-    
-            <mdb-card-text [innerHTML]="sto['excerpt']['rendered']">
-             
-            </mdb-card-text>
-          </mdb-card-body>
-        </mdb-card>
-</div>
-</div>
-<section id="news" class="section news-section">
-
-  <h2 class="section-heading text-center mb-5 mt-5 pt-4 font-weight-bold wow fadeIn">
-      latest posts
-  </h2>
-
-    <hr class="between-sections">
-
-    <!--Section: Design-->
-    <div class="text-center mt-3 text-lg-left"  *ngFor="let book of bookdata">
-        <div class="row pb-2 pt-3 wow fadeIn">
-            <div class="col-lg-3">
-                 <div class="view overlay mb-3 z-depth-1">
-                    <img src="/src/assets/img/letter-447577_960_720.jpg" class="img-fluid z-depth-1" alt="Post Image">
-                    <div class="mask rgba-white-slight"></div>
+</div>-->
+<section class="clean-block clean-info dark">
+    <div class="container">
+        <div class="block-heading"></div>
+        <div class="row align-items-center">
+            <div class="col-md-6"><img class="img-thumbnail" src="assets/img/adult-chill.png"></div>
+            <div class="col-md-6">
+               <!-- <h3>Lorem impsum dolor sit amet</h3>-->
+                <div class="getting-started-info">
+                    <p [innerHTML]="container"></p>
                 </div>
             </div>
-            <div class="col-lg-9 add-margins-2">
-                <h6 class="text-uppercase mb-3"><a routerLink="/blog/{{book['id']}}" class="text-muted grey-text font-weight-bold">| {{book['date']}}</a></h6>
-                <h4 class="mb-3"><a routerLink="/blog/{{book['id']}}" class="teal-text font-weight-bold pb-3" [innerHTML]="book['title']['rendered']"> </a></h4>
-                <p class="grey-text-3 font-thin" [innerHTML]="book['excerpt']['rendered']"></p>
+        </div>
+    </div>
+</section>
+<div class="brands"><a href="#"> <i class="icon ion-social-wordpress padleft"></i><i class="fab fa-php icon padleft"></i><i class="fab fa-js-square icon padleft"></i><i class="fab fa-html5 icon padleft"></i><i class="fab fa-css3 icon padleft"></i><i class="fab fa-angular icon padleft"></i></a></div>
+<div
+    class="projects-clean">
+    <div class="container">
+        <div class="intro">
+            <h2 class="text-center">My last six projects</h2>
+            <p class="text-center"></p>
+        </div>
+        <div class="row projects" >
+
+            <div class="col-sm-6 col-lg-4 item" *ngFor="let sto of postdata">
+                <a     routerLink="/post/{{sto['id']}}">
+              <img class="img-fluid" src="{{sto['acf']['imgprog']}}">
+                <h3 class="name"> {{sto['title']['rendered']}}</h3>
+                <p class="description" [innerHTML]="sto['excerpt']['rendered']"></p>
+                </a>
+            </div>
+
+
+        </div>
+    </div>
+    </div>
+    <div class="features-boxed">
+        <div class="container">
+            <div class="intro">
+                <h2 class="text-center">My last six posts</h2>
+                <p class="text-center">You must log in to view content!!! </p>
+            </div>
+            <div class="row justify-content-center features">
+
+                <div class="col-sm-6 col-md-5 col-lg-4 item" *ngFor="let book of bookdata">
+                    <div class="box"><i class="icon ion-social-wordpress icon"></i>
+                        <h3 class="name" [innerHTML]="book['title']['rendered']"></h3>
+                        <p class="description" [innerHTML]="book['excerpt']['rendered']"></p><a routerLink="/blog/{{book['id']}}" class="learn-more">Read more »</a></div>
+                </div>
+
             </div>
         </div>
-        <hr class="between-sections mt-4 mb-4">
     </div>
-
-</section>
-</div>

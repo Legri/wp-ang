@@ -16,6 +16,7 @@ import { PostComponent } from './pages/project/post.component';
 
 import { GuardpagesGuard } from './guardpages.guard';
 import { GetcontentserviceService} from '../app/services/getcontentservice.service'
+import { ContactService } from '../app/services/contact.service';
 
 import { Ng4LoadingSpinnerModule } from 'ng4-loading-spinner';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
@@ -77,7 +78,7 @@ const appRoutes: Routes = [
     
   ],
   schemas: [ NO_ERRORS_SCHEMA ],
-  providers: [GuardpagesGuard,GetcontentserviceService],
+  providers: [GuardpagesGuard,GetcontentserviceService,ContactService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

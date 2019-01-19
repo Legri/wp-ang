@@ -1,43 +1,40 @@
-<div class="container">
-  
-
-
-<!-- Search form -->
-<div class="md-form active-cyan active-cyan-2 mb-3">
-    <input class="form-control" type="text" placeholder="Search" aria-label="Search" [(ngModel)]="searchtext" (ngModelChange)="onClickSearch(searchtext)">
-  </div>
-
-
-<div  *ngIf="message2=='is login'">
-    <div class="alert alert-danger" role="alert">
-        <strong>Oh snap!</strong> nothing was found!!!
-      </div>
-  </div>
-
-<section id="news" class="section news-section">
-
-  <h1 class="section-heading text-center mb-5 mt-5 pt-4 font-weight-bold wow fadeIn" >My posts</h1>
-
-  <hr class="between-sections">
-
-  <!--Section: Design-->
-  <div class="text-center mt-3 text-lg-left"  *ngFor="let book of bookdata | paginate: { itemsPerPage: 3, currentPage: p }">
-      <div class="row pb-2 pt-3 wow fadeIn" >
-          <div class="col-lg-3">
-               <div class="view overlay mb-3 z-depth-1">
-                  <img src="https://picsum.photos/900/500?random&t=${Math.random()}" class="img-fluid z-depth-1" alt="Post Image">
-                  <div class="mask rgba-white-slight"></div>
+<div data-bs-parallax-bg="true" style="height:500px;background-image:url(https://unsplash.it/1800/900?image=1051);background-position:center;background-size:cover;"></div>
+<div></div>
+<div class="projects-horizontal">
+    <div class="container">
+        <div class="intro">
+            <h2 class="text-center">My posts</h2>
+            <p class="text-center">You must log in to view content!!! </p>
+        </div>
+        <div class="col-md-12">
+            <div class="search-form">
+                <div class="input-group">
+                    <div class="input-group-prepend"><span class="input-group-text"><i class="fa fa-search"></i></span></div>
+                    <input class="form-control" type="text" placeholder="I am looking for.."  [(ngModel)]="searchtext" (ngModelChange)="onClickSearch(searchtext)">
+                   <!-- <div class="input-group-append"><button class="btn btn-light" type="button">Search </button></div>-->
+                </div>
+            </div>
+        </div>
+        <div  *ngIf="message2=='is login'">
+            <div class="alert alert-danger" role="alert">
+                <strong>Oh snap!</strong> nothing was found!!!
               </div>
           </div>
-          <div class="col-lg-9 add-margins-2">
-              <h6 class="text-uppercase mb-3"><a routerLink="/blog/{{book['id']}}" class="text-muted grey-text font-weight-bold">| {{book['date']}}</a></h6>
-              <h4 class="mb-3"><a routerLink="/blog/{{book['id']}}" class="teal-text font-weight-bold pb-3" [innerHTML]="book['title']['rendered']"> </a></h4>
-              <p class="grey-text-3 font-thin"  [innerHTML]="book['excerpt']['rendered']"></p>
-          </div>
-      </div>
-      <hr class="between-sections mt-4 mb-4">
-  </div>
-  <pagination-controls (pageChange)="p = $event"></pagination-controls>
-</section>
-
+        
+        <div class="row projects">
+            <div class="col-sm-6 item" *ngFor="let book of bookdata | paginate: { itemsPerPage: 4, currentPage: p }">
+                <div class="row">
+                    <div class="col-md-12 col-lg-5"><a  routerLink="/blog/{{book['id']}}"><img class="img-fluid" src="assets/img/desk.jpg"></a></div>
+                    <div class="col">
+                        <h3 class="name" [innerHTML]="book['title']['rendered']"></h3>
+                        <p class="description" [innerHTML]="book['excerpt']['rendered']"></p>
+                        <a  routerLink="/blog/{{book['id']}}">Read more »</a>
+                    </div>
+                </div>
+            </div>
+                
+        </div>
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    </div>
 </div>
+

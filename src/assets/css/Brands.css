@@ -1,0 +1,25 @@
+.brands {
+  color: #313437;
+  /*background-color: #fff;*/
+  background-color: rgba(242,242,242,0.37);
+}
+
+.brands a {
+  display: block;
+  text-align: center;
+  padding: 40px 0;
+  font-size: 50px;
+}
+
+@media (max-width:767px) {
+  .brands a {
+    padding: 30px 0;
+  }
+}
+
+.brands a img {
+  display: inline-block;
+  margin: 10px 20px;
+  vertical-align: middle;
+}
+

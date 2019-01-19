@@ -1,94 +1,25 @@
 <div class="container">
-
-    <!-- Contact -->
-    <section id="contact" class="section mb-4">
-
-      <!--Section heading-->
-      <h1 class="section-heading text-center mb-5 mt-5 pt-4 wow fadeIn" style="visibility: visible; animation-name: fadeIn;">Contact me</h1>
-      <!--Section sescription-->
-      <p class="text-center w-responsive mx-auto m-b-5 wow fadeIn" data-wow-delay="0.2s" style="visibility: visible; animation-name: fadeIn; animation-delay: 0.2s;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, error amet numquam iure provident voluptate esse quasi, veritatis totam voluptas nostrum quisquam eum porro a pariatur accusamus veniam. Quia, minima?</p>
-
-      <div class="row wow fadeIn" data-wow-delay="0.4s" style="visibility: visible; animation-name: fadeIn; animation-delay: 0.4s;">
-
-        <!--First column-->
-        <div class="col-md-8 mb-5">
-          <form>
-            <!--First row-->
-            <div class="row">
-              <!--First column-->
-              <div class="col-md-6">
-                <div class="md-form mb-0">
-                  <div class="md-form mb-0">
-                    <input type="text" id="form41" class="form-control">
-                    <label for="form41" class="">Your name</label>
+  <div class="row">
+      <div class="col">
+          <div class="shadow" style="width: 100%;min-height: 630px;margin-top: 119px;background-color: rgba(255,255,255,0.79);">
+              <div style="padding-top: 70px;" >
+                  <div class="form-group">
+                      <h1 class="text-center">Contact Us.</h1>
                   </div>
+                  <div class="form-group"><input class="form-control form-control-lg" type="text"  placeholder="Name" style="width: 50%;margin-left: 25%;" name="username" [(ngModel)]="username" required/></div>
+                  <div class="form-group"><input class="form-control form-control-lg" type="email" placeholder="Email" style="width: 50%;margin-left: 25%;" name="usermail" [(ngModel)]="usermail" required/></div>
+                  <div class="form-group"><textarea class="form-control form-control-lg" placeholder="Message" style="width: 50%;margin-left: 25%;min-height: 200px;" name="usertext" [(ngModel)]="usertext" required></textarea></div>
+                  <div class="form-group"><button class="btn btn-dark btn-lg"  style="width: 50%;margin-left: 25%;" (click)="onClickSeandh(username,usermail,usertext)">Contact us</button></div>
                 </div>
-              </div>
-
-              <!--Second column-->
-              <div class="col-md-6">
-                <div class="md-form mb-0">
-                  <div class="md-form mb-0">
-                    <input type="text" id="form52" class="form-control">
-                    <label for="form52" class="">Your email</label>
-                  </div>
+                <div *ngIf="sendok">
+                    mail sending
                 </div>
-              </div>
-            </div>
-            <!--/.First row-->
-
-            <!--Second row-->
-            <div class="row">
-              <div class="col-md-12">
-                <div class="md-form mb-0">
-                  <input type="text" id="form51" class="form-control">
-                  <label for="form51" class="">Subject</label>
+                <div *ngIf="sendok==false">
+                    mail not sending
                 </div>
-              </div>
-            </div>
-            <!--/Second row-->
-
-            <!--Third row-->
-            <div class="row">
-              <!--First column-->
-              <div class="col-md-12">
-
-                <div class="md-form mb-0">
-                  <textarea type="text" id="form76" class="md-textarea form-control" rows="3"></textarea>
-                  <label for="form76">Your message</label>
-                </div>
-
-              </div>
-            </div>
-            <!--/.Third row-->
-          </form>
-
-          <div class="text-center text-md-left mt-4">
-            <a class="btn btn-elegant waves-effect waves-light">Send</a>
           </div>
-        </div>
-        <!--.First column-->
-
-        <!--Second column-->
-        <div class="col-md-4">
-          <ul class="contact-icons list-unstyled text-center">
-            <li><i class="fas fa-map-marker-alt fa-2x"></i>
-              <p>New York, NY 10012, USA</p>
-            </li>
-
-            <li><i class="fas fa-phone fa-2x"></i>
-              <p>+ 01 234 567 89</p>
-            </li>
-
-            <li><i class="fas fa-envelope fa-2x"></i>
-              <p>contact@mdbootstrap.com</p>
-            </li>
-          </ul>
-        </div>
-        <!--.Second column-->
-
       </div>
-    </section>
-    <!--/Section: Contact v.2-->
-
   </div>
+</div>
+
+
